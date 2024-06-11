@@ -4,6 +4,9 @@ import dotenv from 'dotenv'
 import { errorHandler } from './middlewares/errorMiddleware.js'
 import { connectDB } from './config/db.js'
 
+// import routes
+import userRouter from './routes/User.route.js'
+
 const app = express()
 
 dotenv.config()
@@ -17,6 +20,9 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 app.use(express.json())
+
+// routes
+app.use("/api/v1/users", userRouter)
 
 // error handler middleware
 app.use(errorHandler)
