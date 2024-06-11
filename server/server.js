@@ -6,6 +6,7 @@ import { connectDB } from './config/db.js'
 
 // import routes
 import userRouter from './routes/User.route.js'
+import blogRouter from './routes/Blog.route.js'
 
 const app = express()
 
@@ -23,6 +24,7 @@ app.use(express.json())
 
 // routes
 app.use("/api/v1/users", userRouter)
+app.use("/api/v1/blogs", blogRouter)
 
 // error handler middleware
 app.use(errorHandler)
