@@ -15,8 +15,7 @@ dotenv.config()
 const PORT = process.env.PORT
 
 const corsOptions = {
-    origin: '',
-    credentials: true
+    origin: 'http://localhost:5173'
 }
 
 app.use(cors(corsOptions))

@@ -29,7 +29,7 @@ export const addBlog = expressAsyncHandler(async (req, res) => {
         user,
         date: currentDate
     })
-    awaitnewBlog.save()
+    await newBlog.save()
 
     try {
         const session = await mongoose.startSession()
